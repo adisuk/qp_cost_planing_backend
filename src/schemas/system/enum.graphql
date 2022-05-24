@@ -1,0 +1,17 @@
+enum Status{
+    Enabled
+    Disabled
+}
+enum LoginType {
+    SignIn
+    SignOut
+}
+enum LoginStatus {
+    Passed
+    Failed
+}
+enum TransactionType {
+    Created
+    Updated
+    Deleted
+}

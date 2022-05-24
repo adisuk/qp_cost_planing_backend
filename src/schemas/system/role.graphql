@@ -1,0 +1,36 @@
+extend type Query {
+	role(id: ID!): Role!
+	roles: [Role!]
+}
+
+input RoleInput {
+    id: String!
+}
+
+type Role {
+	id: ID!
+	nameTh: String!
+	nameEn: String
+	permissions: [Permission!]
+	status: Status!
+	type: String!
+	isRoot: Boolean!
+	createdAt: String!
+	updatedAt: String!
+	createdBy: User
+	updatedBy: User
+}
+
+type Permission {
+	id: ID!
+	role: Role!
+	unitMenu: UnitMenu
+	visible: Boolean!
+	create: Boolean!
+	edit: Boolean!
+	delete: Boolean!
+	createdAt: String!
+	updatedAt: String!
+	createdBy: User!
+	updatedBy: User!
+}

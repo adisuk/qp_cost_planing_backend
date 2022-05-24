@@ -1,0 +1,252 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+
+// สถานะ
+// enum Status {
+//     Enabled
+//     Disabled
+// }
+
+// ประเภทเข้าสู่ระบบ
+// enum LoginType {
+//     SignIn
+//     SignOut
+// }
+
+// สถานะการเข้าสู่ระบบ
+// enum LoginStatus {
+//     Passed
+//     Failed
+// }
+
+// สถานะธุรกรรม
+// enum TransactionType {
+//     Created
+//     Updated
+//     Deleted
+// }
+
+// ============== module Master ==============
+model Prefix {
+    id             String           @id @default(cuid())
+    sequence       Int              @default(value: 0)
+    isChoose       Boolean          @default(value: false)
+    nameTh         String
+    nameShortTh    String?
+    nameEn         String?
+    nameShortEn    String?
+    status         String           @default(value: "Enabled")
+    isDeleted      Boolean          @default(value: false)
+    createdAt      DateTime         @default(now())
+    updatedAt      DateTime         @updatedAt
+    createdBy      User             @relation("PrefixCreatedBy", fields: [createdById], references: [id], onDelete: NoAction, onUpdate: NoAction)
+    createdById    String
+    updatedBy      User             @relation("PrefixUpdatedBy", fields: [updatedById], references: [id], onDelete: NoAction, onUpdate: NoAction)
+    updatedById    String
+    users          User[]           @relation("UserPrefix")
+}
+
+// ============== module System ==============
+model EventLog {
+    id        String   @id @default(cuid())
+    ipAddress String
+    logLevel  String
+    method    String
+    message   String
+    errorCode String
+    account   User?    @relation("EventLogAccount", fields: [accountId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+    accountId String?
+    payload   String?
+    createdAt DateTime @default(now())
+}
+
+model LoginLog {
+    id         String      @id @default(cuid())
+    loginDate  DateTime    @default(now())
+    expireDate DateTime?
+    token      String?
+    type       String   @default(value: "SignIn") //LoginType
+    account    User?       @relation("LoginLogAccount", fields: [accountId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+    accountId  String?
+    status     String @default(value: "Passed") //LoginStatus
+    createdAt  DateTime    @default(now())
+}
+
+model TransactionLog {
+    id        String   @id @default(cuid())
+    action    String
+    method    String
+    type      String   @default(value: "Created") //TransactionType
+    account   User?    @relation("TransactionLogAccount", fields: [accountId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+    accountId String?
+    payload   String?
+    createdAt DateTime @default(now())
+}
+
+model Menu {
+    id        String    @id @default(cuid())
+    code      String    @unique
+    icon      String
+    nameTh    String
+    nameEn    String?
+    route     String?
+    sequence  Int       @default(value: 0)
+    status    String    @default(value: "Enabled") // Status
+    isDeleted Boolean   @default(value: false)
+    createdAt   DateTime     @default(now())
+    updatedAt   DateTime     @updatedAt
+    createdBy      User             @relation("MenuCreatedBy", fields: [createdById], references: [id], onDelete: NoAction, onUpdate: NoAction)
+    createdById    String
+    updatedBy      User             @relation("MenuUpdatedBy", fields: [updatedById], references: [id], onDelete: NoAction, onUpdate: NoAction)
+    updatedById    String
+    subMenus  SubMenu[] @relation("MenuSubMenu")
+}
+
+model SubMenu {
+    id          String       @id @default(cuid())
+    code        String       @unique
+    nameTh      String
+    nameEn      String?
+    route       String?
+    sequence    Int          @default(value: 0)
+    menu        Menu         @relation("MenuSubMenu", fields: [menuId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+    menuId      String
+    status      String       @default(value: "Enabled") // Status
+    isDeleted   Boolean      @default(value: false)
+    createdAt   DateTime     @default(now())
+    updatedAt   DateTime     @updatedAt
+    createdBy      User             @relation("SubMenuCreatedBy", fields: [createdById], references: [id], onDelete: NoAction, onUpdate: NoAction)
+    createdById    String
+    updatedBy      User             @relation("SubMenuUpdatedBy", fields: [updatedById], references: [id], onDelete: NoAction, onUpdate: NoAction)
+    updatedById    String
+    unitMenus   UnitMenu[]   @relation("SubMenuUnitMenu")
+}
+
+model UnitMenu {
+    id          String       @id @default(cuid())
+    code        String       @unique @default(cuid())
+    nameTh      String?
+    nameEn      String?
+    route       String?
+    sequence    Int          @default(value: 0)
+    subMenu     SubMenu      @relation("SubMenuUnitMenu", fields: [subMenuId], references: [id])
+    subMenuId   String
+    status      String       @default(value: "Enabled") //Status
+    isDeleted   Boolean      @default(value: false)
+    createdAt   DateTime     @default(now())
+    updatedAt   DateTime     @updatedAt
+    createdBy      User             @relation("UnitMenuCreatedBy", fields: [createdById], references: [id], onDelete: NoAction, onUpdate: NoAction)
+    createdById    String
+    updatedBy      User             @relation("UnitMenuUpdatedBy", fields: [updatedById], references: [id], onDelete: NoAction, onUpdate: NoAction)
+    updatedById    String
+    permissions Permission[] @relation("UnitMenuPermission")
+}
+
+model Role {
+    id          String       @id @default(cuid())
+    nameTh      String
+    nameEn      String?
+    status      String       @default(value: "Enabled") //Status
+    isRoot      Boolean      @default(value: false)
+    isDeleted   Boolean      @default(value: false)
+    createdAt   DateTime     @default(now())
+    updatedAt   DateTime     @updatedAt
+    createdBy      User?     @relation("RoleCreatedBy", fields: [createdById], references: [id], onDelete: NoAction, onUpdate: NoAction)
+    createdById    String?
+    updatedBy      User?     @relation("RoleUpdatedBy", fields: [updatedById], references: [id], onDelete: NoAction, onUpdate: NoAction)
+    updatedById    String?
+    users       User[]       @relation("UserRole")
+    permissions Permission[] @relation("RolePermission")
+}
+
+model Permission {
+    id          String   @id @default(cuid())
+    role        Role     @relation("RolePermission", fields: [roleId], references: [id])
+    roleId      String
+    unitMenu    UnitMenu?  @relation("UnitMenuPermission", fields: [unitMenuId], references: [id])
+    unitMenuId  String?
+    visible     Boolean  @default(value: true)
+    create      Boolean  @default(value: false)
+    edit        Boolean  @default(value: false)
+    delete      Boolean  @default(value: false)
+    isDeleted   Boolean  @default(value: false)
+    createdAt   DateTime @default(now())
+    updatedAt   DateTime @updatedAt
+    createdBy      User             @relation("PermissionCreatedBy", fields: [createdById], references: [id], onDelete: NoAction, onUpdate: NoAction)
+    createdById    String
+    updatedBy      User             @relation("PermissionUpdatedBy", fields: [updatedById], references: [id], onDelete: NoAction, onUpdate: NoAction)
+    updatedById    String
+}
+
+// ============== module User ==============
+model User {
+    id                   String           @id @default(cuid())
+    photo                String?
+    role                 Role             @relation("UserRole", fields: [roleId], references: [id])
+    roleId               String
+    prefix               Prefix?          @relation("UserPrefix", fields: [prefixId], references: [id])
+    prefixId             String?
+    name                 String
+    surname              String
+    username             String           @unique
+    email                String           @unique
+    password             String
+    accessFailedCount    Int              @default(value: 0)
+    oneTimePassword      String           @default(value: "")
+    oneTimePasswordReset Boolean          @default(value: true)
+    resetKey             String           @default(value: "")
+    isRoot               Boolean          @default(value: false)
+    status               String           @default(value: "Enabled") //Status
+    isDeleted            Boolean          @default(value: false)
+    createdAt            DateTime         @default(now())
+    updatedAt            DateTime         @updatedAt
+    createdBy            User?             @relation("UserCreatedBy", fields: [createdById], references: [id], onDelete: NoAction, onUpdate: NoAction)
+    createdById          String?
+    updatedBy            User?             @relation("UserUpdatedBy", fields: [updatedById], references: [id], onDelete: NoAction, onUpdate: NoAction)
+    updatedById          String?
+    userCreatedBys       User[]           @relation("UserCreatedBy")
+    userUpdatedBys       User[]           @relation("UserUpdatedBy")
+    eventLogs            EventLog[]       @relation("EventLogAccount")
+    loginLogs            LoginLog[]       @relation("LoginLogAccount")
+    transactionLogs      TransactionLog[] @relation("TransactionLogAccount")
+    userResetLogs        UserResetLog[]   @relation("UserResetLogUser")
+    prefixCreatedBys     Prefix[]         @relation("PrefixCreatedBy")
+    prefixUpdatedBys     Prefix[]         @relation("PrefixUpdatedBy")
+    menuCreatedBys       Menu[]           @relation("MenuCreatedBy")
+    menuUpdatedBys       Menu[]           @relation("MenuUpdatedBy")
+    subMenuCreatedBys    SubMenu[]        @relation("SubMenuCreatedBy")
+    subMenuUpdatedBys    SubMenu[]        @relation("SubMenuUpdatedBy")
+    unitMenuCreatedBys   UnitMenu[]       @relation("UnitMenuCreatedBy")
+    unitMenuUpdatedBys   UnitMenu[]       @relation("UnitMenuUpdatedBy")
+    roleCreatedBys       Role[]           @relation("RoleCreatedBy")
+    roleUpdatedBys       Role[]           @relation("RoleUpdatedBy")
+    permissionCreatedBys     Permission[]   @relation("PermissionCreatedBy")
+    permissionUpdatedBys     Permission[]   @relation("PermissionUpdatedBy")
+    userResetLogCreatedBys     UserResetLog[]   @relation("UserResetLogCreatedBy")
+    userResetLogUpdatedBys     UserResetLog[]   @relation("UserResetLogUpdatedBy")
+}
+
+model UserResetLog{
+    id                   String           @id @default(cuid())
+    user                 User             @relation("UserResetLogUser", fields: [userId], references: [id])
+    userId               String
+    seq                  Int              @default(value: 0)
+    password             String           @default(value: "")
+    status               String           @default(value: "Enabled") //Status
+    isDeleted            Boolean          @default(value: false)
+    createdAt            DateTime         @default(now())
+    updatedAt            DateTime         @updatedAt
+    createdBy      User             @relation("UserResetLogCreatedBy", fields: [createdById], references: [id], onDelete: NoAction, onUpdate: NoAction)
+    createdById    String
+    updatedBy      User             @relation("UserResetLogUpdatedBy", fields: [updatedById], references: [id], onDelete: NoAction, onUpdate: NoAction)
+    updatedById    String
+}

@@ -1,0 +1,9 @@
+type PaginationInfo {
+	fromItem: Int!
+	toItem: Int!
+	currentPage: Int!
+	pageSizes: Int!
+	totalItemsInPage: Int!
+	totalPage: Int!
+	totalItems: Int!
+}

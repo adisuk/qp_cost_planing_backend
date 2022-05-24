@@ -1,7 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7b700c73-b0ec-44f5-836a-c7c1ceb319f1" name="Changes" comment="convert DB to sqlserver" />
+    <list default="true" id="7b700c73-b0ec-44f5-836a-c7c1ceb319f1" name="Changes" comment="init">
+      <change afterPath="$PROJECT_DIR$/.eslintignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.eslintrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prisma/migrations/20220524095540_init/migration.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prisma/migrations/migration_lock.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/authen.interface.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/context.interface.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/error.handler.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/pagination.interface.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resolvers/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resolvers/mutation/auth/auth.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resolvers/mutation/master/prefix.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resolvers/mutation/user/user.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resolvers/query/master/prefix.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resolvers/query/system/menu.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resolvers/query/system/role.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resolvers/query/user/user.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resolvers/relation/system/menu.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resolvers/relation/system/role.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resolvers/relation/user/user.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resolvers/shared/mutation.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resolvers/subscription/Subscription.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schemas/auth/auth.graphql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schemas/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schemas/master/prefix.graphql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schemas/pagination/pagination.graphql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schemas/system/enum.graphql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schemas/system/menu.graphql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schemas/system/role.graphql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schemas/user/user.graphql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/seed/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/seed/master/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/seed/resetMenus.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/jwt.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/mutation.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/pagination.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/query.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/util.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +60,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -68,7 +118,7 @@
       <workItem from="1653208202912" duration="27547000" />
       <workItem from="1653275048506" duration="9799000" />
       <workItem from="1653305991947" duration="2860000" />
-      <workItem from="1653361617829" duration="20284000" />
+      <workItem from="1653361617829" duration="20840000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1653228950264</created>
@@ -98,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653386197964</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="-">
+      <created>1653386508439</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1653386508439</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,8 +174,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="init" />
     <MESSAGE value="convert DB to sqlserver" />
-    <option name="LAST_COMMIT_MESSAGE" value="convert DB to sqlserver" />
+    <MESSAGE value="-" />
+    <MESSAGE value="init" />
+    <option name="LAST_COMMIT_MESSAGE" value="init" />
   </component>
 </project>
