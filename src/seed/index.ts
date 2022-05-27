@@ -1,9 +1,7 @@
-import { PrismaClient } from '@prisma/client'
-
-const prisma = new PrismaClient()
-
 // A `main` function so that you can use async/await
 async function main() {
+    const { PrismaClient } = await import('@prisma/client');
+    const prisma = new PrismaClient()
     //region clear data
     await prisma.permission.deleteMany({});
     await prisma.unitMenu.deleteMany({});
@@ -66,19 +64,19 @@ async function main() {
             id: currentUser.id
         },
         data: {
-            prefix: { connect: {id: prefix!.id} }
+            prefix: { connect: {id: prefix?.id} }
         }
     })
     console.log('update... prefix to user root');
     //endregion
 
     console.log('seed... index');
+
+    await prisma.$disconnect()
 }
 
 main()
     .catch((e) => {
         throw e
     })
-    .finally(async () => {
-        await prisma.$disconnect()
-    })
+

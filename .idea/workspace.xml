@@ -2,28 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="315edf37-f0f3-4ab6-af2d-5581882764ee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/prisma/migrations/20220524111638_edit/migration.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/migrations/20220524095540_init/migration.sql" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/migrations/20220524105310_edit/migration.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/context.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/context.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/mutation/auth/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/mutation/auth/auth.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schemas/auth/auth.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schemas/auth/auth.graphql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/seed/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/seed/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/seed/master/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/seed/master/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/seed/resetMenus.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/seed/resetMenus.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/jwt.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/jwt.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/util.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/util.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -39,20 +29,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;js.last.introduce.type&quot;: &quot;CONST&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/adisukpriwan/webstorm/qp_cost_planing_backend&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/adisukpriwan/webstorm/qp_cost_planing_backend/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  }
-}</component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -63,6 +68,7 @@
       <updated>1653395811252</updated>
       <workItem from="1653395813108" duration="3970000" />
       <workItem from="1653454614365" duration="6028000" />
+      <workItem from="1653641967922" duration="1817000" />
     </task>
     <servers />
   </component>

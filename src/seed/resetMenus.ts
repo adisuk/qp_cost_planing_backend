@@ -1,15 +1,6 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const prismaClient = require('@prisma/client');
-
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-const prisma = new prismaClient.PrismaClient()
-
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 async function main() {
+    const { PrismaClient } = await import('@prisma/client');
+    const prisma = new PrismaClient()
     const currentUser = await prisma.user.findFirst({
         where: { isRoot: true, },
         include: { role: true }
@@ -41,25 +32,25 @@ async function main() {
                             route: '',
                             permissions: {
                                 create: {
-                                    role: { connect: { id: currentUser.role.id} },
+                                    role: { connect: { id: currentUser?.role.id} },
                                     visible: true,
                                     create: true,
                                     edit: true,
                                     delete: true,
-                                    createdBy: { connect: { id: currentUser.id } },
-                                    updatedBy: { connect: { id: currentUser.id } },
+                                    createdBy: { connect: { id: currentUser?.id } },
+                                    updatedBy: { connect: { id: currentUser?.id } },
                                 }
                             },
-                            createdBy: { connect: { id: currentUser.id } },
-                            updatedBy: { connect: { id: currentUser.id } },
+                            createdBy: { connect: { id: currentUser?.id } },
+                            updatedBy: { connect: { id: currentUser?.id } },
                         }
                     },
-                    createdBy: { connect: { id: currentUser.id } },
-                    updatedBy: { connect: { id: currentUser.id } },
+                    createdBy: { connect: { id: currentUser?.id } },
+                    updatedBy: { connect: { id: currentUser?.id } },
                 }
             },
-            createdBy: { connect: { id: currentUser.id } },
-            updatedBy: { connect: { id: currentUser.id } },
+            createdBy: { connect: { id: currentUser?.id } },
+            updatedBy: { connect: { id: currentUser?.id } },
         },
     });
     await prisma.menu.create({
@@ -85,25 +76,25 @@ async function main() {
                             route: '',
                             permissions: {
                                 create: {
-                                    role: { connect: { id: currentUser.role.id} },
+                                    role: { connect: { id: currentUser?.role.id} },
                                     visible: true,
                                     create: true,
                                     edit: true,
                                     delete: true,
-                                    createdBy: { connect: { id: currentUser.id } },
-                                    updatedBy: { connect: { id: currentUser.id } },
+                                    createdBy: { connect: { id: currentUser?.id } },
+                                    updatedBy: { connect: { id: currentUser?.id } },
                                 }
                             },
-                            createdBy: { connect: { id: currentUser.id } },
-                            updatedBy: { connect: { id: currentUser.id } },
+                            createdBy: { connect: { id: currentUser?.id } },
+                            updatedBy: { connect: { id: currentUser?.id } },
                         }
                     },
-                    createdBy: { connect: { id: currentUser.id } },
-                    updatedBy: { connect: { id: currentUser.id } },
+                    createdBy: { connect: { id: currentUser?.id } },
+                    updatedBy: { connect: { id: currentUser?.id } },
                 }
             },
-            createdBy: { connect: { id: currentUser.id } },
-            updatedBy: { connect: { id: currentUser.id } },
+            createdBy: { connect: { id: currentUser?.id } },
+            updatedBy: { connect: { id: currentUser?.id } },
         },
     });
     await prisma.menu.create({
@@ -129,25 +120,25 @@ async function main() {
                             route: '',
                             permissions: {
                                 create: {
-                                    role: { connect: { id: currentUser.role.id} },
+                                    role: { connect: { id: currentUser?.role.id} },
                                     visible: true,
                                     create: true,
                                     edit: true,
                                     delete: true,
-                                    createdBy: { connect: { id: currentUser.id } },
-                                    updatedBy: { connect: { id: currentUser.id } },
+                                    createdBy: { connect: { id: currentUser?.id } },
+                                    updatedBy: { connect: { id: currentUser?.id } },
                                 }
                             },
-                            createdBy: { connect: { id: currentUser.id } },
-                            updatedBy: { connect: { id: currentUser.id } },
+                            createdBy: { connect: { id: currentUser?.id } },
+                            updatedBy: { connect: { id: currentUser?.id } },
                         }
                     },
-                    createdBy: { connect: { id: currentUser.id } },
-                    updatedBy: { connect: { id: currentUser.id } },
+                    createdBy: { connect: { id: currentUser?.id } },
+                    updatedBy: { connect: { id: currentUser?.id } },
                 }
             },
-            createdBy: { connect: { id: currentUser.id } },
-            updatedBy: { connect: { id: currentUser.id } },
+            createdBy: { connect: { id: currentUser?.id } },
+            updatedBy: { connect: { id: currentUser?.id } },
         },
     });
     await prisma.menu.create({
@@ -173,25 +164,25 @@ async function main() {
                             route: '',
                             permissions: {
                                 create: {
-                                    role: { connect: { id: currentUser.role.id} },
+                                    role: { connect: { id: currentUser?.role.id} },
                                     visible: true,
                                     create: true,
                                     edit: true,
                                     delete: true,
-                                    createdBy: { connect: { id: currentUser.id } },
-                                    updatedBy: { connect: { id: currentUser.id } },
+                                    createdBy: { connect: { id: currentUser?.id } },
+                                    updatedBy: { connect: { id: currentUser?.id } },
                                 }
                             },
-                            createdBy: { connect: { id: currentUser.id } },
-                            updatedBy: { connect: { id: currentUser.id } },
+                            createdBy: { connect: { id: currentUser?.id } },
+                            updatedBy: { connect: { id: currentUser?.id } },
                         }
                     },
-                    createdBy: { connect: { id: currentUser.id } },
-                    updatedBy: { connect: { id: currentUser.id } },
+                    createdBy: { connect: { id: currentUser?.id } },
+                    updatedBy: { connect: { id: currentUser?.id } },
                 }
             },
-            createdBy: { connect: { id: currentUser.id } },
-            updatedBy: { connect: { id: currentUser.id } },
+            createdBy: { connect: { id: currentUser?.id } },
+            updatedBy: { connect: { id: currentUser?.id } },
         },
     });
     await prisma.menu.create({
@@ -217,25 +208,25 @@ async function main() {
                             route: '',
                             permissions: {
                                 create: {
-                                    role: { connect: { id: currentUser.role.id} },
+                                    role: { connect: { id: currentUser?.role.id} },
                                     visible: true,
                                     create: true,
                                     edit: true,
                                     delete: true,
-                                    createdBy: { connect: { id: currentUser.id } },
-                                    updatedBy: { connect: { id: currentUser.id } },
+                                    createdBy: { connect: { id: currentUser?.id } },
+                                    updatedBy: { connect: { id: currentUser?.id } },
                                 }
                             },
-                            createdBy: { connect: { id: currentUser.id } },
-                            updatedBy: { connect: { id: currentUser.id } },
+                            createdBy: { connect: { id: currentUser?.id } },
+                            updatedBy: { connect: { id: currentUser?.id } },
                         }
                     },
-                    createdBy: { connect: { id: currentUser.id } },
-                    updatedBy: { connect: { id: currentUser.id } },
+                    createdBy: { connect: { id: currentUser?.id } },
+                    updatedBy: { connect: { id: currentUser?.id } },
                 }
             },
-            createdBy: { connect: { id: currentUser.id } },
-            updatedBy: { connect: { id: currentUser.id } },
+            createdBy: { connect: { id: currentUser?.id } },
+            updatedBy: { connect: { id: currentUser?.id } },
         },
     });
     await prisma.menu.create({
@@ -262,21 +253,21 @@ async function main() {
                                 route: '',
                                 permissions: {
                                     create: {
-                                        role: { connect: { id: currentUser.role.id} },
+                                        role: { connect: { id: currentUser?.role.id} },
                                         visible: true,
                                         create: true,
                                         edit: true,
                                         delete: true,
-                                        createdBy: { connect: { id: currentUser.id } },
-                                        updatedBy: { connect: { id: currentUser.id } },
+                                        createdBy: { connect: { id: currentUser?.id } },
+                                        updatedBy: { connect: { id: currentUser?.id } },
                                     }
                                 },
-                                createdBy: { connect: { id: currentUser.id } },
-                                updatedBy: { connect: { id: currentUser.id } },
+                                createdBy: { connect: { id: currentUser?.id } },
+                                updatedBy: { connect: { id: currentUser?.id } },
                             }
                         },
-                        createdBy: { connect: { id: currentUser.id } },
-                        updatedBy: { connect: { id: currentUser.id } },
+                        createdBy: { connect: { id: currentUser?.id } },
+                        updatedBy: { connect: { id: currentUser?.id } },
                     },
                     {
                         code: 'SystemMenu',
@@ -293,22 +284,22 @@ async function main() {
                                     route: '',
                                     permissions: {
                                         create: {
-                                            role: { connect: { id: currentUser.role.id} },
+                                            role: { connect: { id: currentUser?.role.id} },
                                             visible: true,
                                             create: true,
                                             edit: true,
                                             delete: true,
-                                            createdBy: { connect: { id: currentUser.id } },
-                                            updatedBy: { connect: { id: currentUser.id } },
+                                            createdBy: { connect: { id: currentUser?.id } },
+                                            updatedBy: { connect: { id: currentUser?.id } },
                                         }
                                     },
-                                    createdBy: { connect: { id: currentUser.id } },
-                                    updatedBy: { connect: { id: currentUser.id } },
+                                    createdBy: { connect: { id: currentUser?.id } },
+                                    updatedBy: { connect: { id: currentUser?.id } },
                                 }
                             ]
                         },
-                        createdBy: { connect: { id: currentUser.id } },
-                        updatedBy: { connect: { id: currentUser.id } },
+                        createdBy: { connect: { id: currentUser?.id } },
+                        updatedBy: { connect: { id: currentUser?.id } },
                     },
                     {
                         code: 'SystemRole',
@@ -325,22 +316,22 @@ async function main() {
                                     route: '',
                                     permissions: {
                                         create: {
-                                            role: { connect: { id: currentUser.role.id} },
+                                            role: { connect: { id: currentUser?.role.id} },
                                             visible: true,
                                             create: true,
                                             edit: true,
                                             delete: true,
-                                            createdBy: { connect: { id: currentUser.id } },
-                                            updatedBy: { connect: { id: currentUser.id } },
+                                            createdBy: { connect: { id: currentUser?.id } },
+                                            updatedBy: { connect: { id: currentUser?.id } },
                                         }
                                     },
-                                    createdBy: { connect: { id: currentUser.id } },
-                                    updatedBy: { connect: { id: currentUser.id } },
+                                    createdBy: { connect: { id: currentUser?.id } },
+                                    updatedBy: { connect: { id: currentUser?.id } },
                                 }
                             ]
                         },
-                        createdBy: { connect: { id: currentUser.id } },
-                        updatedBy: { connect: { id: currentUser.id } },
+                        createdBy: { connect: { id: currentUser?.id } },
+                        updatedBy: { connect: { id: currentUser?.id } },
                     },
                     {
                         code: 'SystemLog',
@@ -358,17 +349,17 @@ async function main() {
                                     sequence: 1,
                                     permissions: {
                                         create: {
-                                            role: { connect: { id: currentUser.role.id} },
+                                            role: { connect: { id: currentUser?.role.id} },
                                             visible: true,
                                             create: true,
                                             edit: true,
                                             delete: true,
-                                            createdBy: { connect: { id: currentUser.id } },
-                                            updatedBy: { connect: { id: currentUser.id } },
+                                            createdBy: { connect: { id: currentUser?.id } },
+                                            updatedBy: { connect: { id: currentUser?.id } },
                                         }
                                     },
-                                    createdBy: { connect: { id: currentUser.id } },
-                                    updatedBy: { connect: { id: currentUser.id } },
+                                    createdBy: { connect: { id: currentUser?.id } },
+                                    updatedBy: { connect: { id: currentUser?.id } },
                                 },
                                 {
                                     code: 'SystemLogLoginLog',
@@ -378,17 +369,17 @@ async function main() {
                                     sequence: 2,
                                     permissions: {
                                         create: {
-                                            role: { connect: { id: currentUser.role.id} },
+                                            role: { connect: { id: currentUser?.role.id} },
                                             visible: true,
                                             create: true,
                                             edit: true,
                                             delete: true,
-                                            createdBy: { connect: { id: currentUser.id } },
-                                            updatedBy: { connect: { id: currentUser.id } },
+                                            createdBy: { connect: { id: currentUser?.id } },
+                                            updatedBy: { connect: { id: currentUser?.id } },
                                         }
                                     },
-                                    createdBy: { connect: { id: currentUser.id } },
-                                    updatedBy: { connect: { id: currentUser.id } },
+                                    createdBy: { connect: { id: currentUser?.id } },
+                                    updatedBy: { connect: { id: currentUser?.id } },
                                 },
                                 {
                                     code: 'SystemLogTransactionLog',
@@ -398,22 +389,22 @@ async function main() {
                                     sequence: 3,
                                     permissions: {
                                         create: {
-                                            role: { connect: { id: currentUser.role.id} },
+                                            role: { connect: { id: currentUser?.role.id} },
                                             visible: true,
                                             create: true,
                                             edit: true,
                                             delete: true,
-                                            createdBy: { connect: { id: currentUser.id } },
-                                            updatedBy: { connect: { id: currentUser.id } },
+                                            createdBy: { connect: { id: currentUser?.id } },
+                                            updatedBy: { connect: { id: currentUser?.id } },
                                         }
                                     },
-                                    createdBy: { connect: { id: currentUser.id } },
-                                    updatedBy: { connect: { id: currentUser.id } },
+                                    createdBy: { connect: { id: currentUser?.id } },
+                                    updatedBy: { connect: { id: currentUser?.id } },
                                 }
                             ]
                         },
-                        createdBy: { connect: { id: currentUser.id } },
-                        updatedBy: { connect: { id: currentUser.id } },
+                        createdBy: { connect: { id: currentUser?.id } },
+                        updatedBy: { connect: { id: currentUser?.id } },
                     },
                     {
                         code: 'SystemUser',
@@ -430,36 +421,34 @@ async function main() {
                                     route: 'UserScreen',
                                     permissions: {
                                         create: {
-                                            role: { connect: { id: currentUser.role.id} },
+                                            role: { connect: { id: currentUser?.role.id} },
                                             visible: true,
                                             create: true,
                                             edit: true,
                                             delete: true,
-                                            createdBy: { connect: { id: currentUser.id } },
-                                            updatedBy: { connect: { id: currentUser.id } },
+                                            createdBy: { connect: { id: currentUser?.id } },
+                                            updatedBy: { connect: { id: currentUser?.id } },
                                         }
                                     },
-                                    createdBy: { connect: { id: currentUser.id } },
-                                    updatedBy: { connect: { id: currentUser.id } },
+                                    createdBy: { connect: { id: currentUser?.id } },
+                                    updatedBy: { connect: { id: currentUser?.id } },
                                 }
                             ]
                         },
-                        createdBy: { connect: { id: currentUser.id } },
-                        updatedBy: { connect: { id: currentUser.id } },
+                        createdBy: { connect: { id: currentUser?.id } },
+                        updatedBy: { connect: { id: currentUser?.id } },
                     },
                 ]
             },
-            createdBy: { connect: { id: currentUser.id } },
-            updatedBy: { connect: { id: currentUser.id } },
+            createdBy: { connect: { id: currentUser?.id } },
+            updatedBy: { connect: { id: currentUser?.id } },
         },
     });
     console.log('seed... resetMenus');
+    await prisma.$disconnect();
 }
 
 main()
     .catch((e) => {
         throw e;
     })
-    .finally(async () => {
-        await prisma.$disconnect();
-    });
