@@ -1,9 +1,13 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const prismaClient = require('@prisma/client');
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 const prisma = new prismaClient.PrismaClient()
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 async function main() {
     const currentUser = await prisma.user.findFirst({
@@ -12,7 +16,6 @@ async function main() {
     });
     const tableNames = [{ tableName: 'permission' }, { tableName: 'unitMenu' }, { tableName: 'subMenu' }, { tableName: 'menu' }];
     for (const res of tableNames) {
-        // @ts-ignore
         await prisma[res.tableName].deleteMany({});
     }
     await prisma.menu.create({

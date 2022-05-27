@@ -31,3 +31,6 @@ export const emailTransport = {
 };
 
 export const emailSecretPublicKey = process.env.MAIL_AUTH_SECRET_PUBLIC_KEY;
+
+export const appDatabaseUrl = process.env.DATABASE_URL || '';
+export const appDatabaseLogUrl = process.env.DATABASE_LOG_URL || '';

@@ -20,7 +20,7 @@ input RegisterInput {
     surname: String!
     "Email to register"
     email: String!
-    "Passowre"
+    "Password"
     password: String!
 }
 

@@ -6,6 +6,7 @@
   "main": "src/index.ts",
   "scripts": {
     "start": "ts-node-dev --respawn --pretty --transpile-only src/index.ts",
+    "dev": "nodemon src/index.ts",
     "lint": "eslint . --ext .ts,js --fix",
     "seed": "node src/seed/index.ts",
     "build": "rimraf dist && tsc -p ."
@@ -18,7 +19,8 @@
     "graphql": "^15.6.1",
     "jsonwebtoken": "^8.5.1",
     "luxon": "^2.4.0",
-    "moment": "^2.29.3"
+    "moment": "^2.29.3",
+    "nodemon": "^2.0.16"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",

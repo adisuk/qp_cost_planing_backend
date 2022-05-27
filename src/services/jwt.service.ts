@@ -1,5 +1,6 @@
 import * as bcrypt from 'bcryptjs';
 import * as jwt from 'jsonwebtoken';
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const  { ApolloError } = require('apollo-server-express');
 import { User } from "@prisma/client";
 import {
@@ -12,11 +13,11 @@ import {
 import {ApolloContext} from "../common/context.interface";
 import {AuthenticationResponder, SignedUser} from "../common/authen.interface";
 
-/**
- * Encoding the password
- * @param password
- */
-export const encodePassword = async (password: string): Promise<string> => await bcrypt.hash(password, 10);
+// /**
+//  * Encoding the password
+//  * @param password
+//  */
+// export const encodePassword = async (password: string): Promise<string> => await bcrypt.hash(password, 10);
 
 /**
  * Compare between two password
@@ -34,9 +35,7 @@ export const createToken = async (user: User): Promise<string> => {
     const signedUser: SignedUser = {
         id: user.id,
         email: user.email,
-        // role: user.role,
     }
-
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     return jwt.sign(signedUser, appSecretKey, {expiresIn: appTokenExpire});
@@ -94,22 +93,22 @@ export const createAuthResponse = async (user: User): Promise<AuthenticationResp
     };
 };
 
-/**
- * Get refreshed token and verify it
- * @param refreshToken
- * @return Promise<SignedUser | null>
- */
-export const getRefreshUser = async (refreshToken: string): Promise<SignedUser | null> => {
-    if (refreshToken) {
-        try {
-            return <SignedUser>jwt.verify(refreshToken.replace('Bearer ', ''), appRefreshSecretKey);
-        } catch (err) {
-            return null;
-        }
-    } else {
-        return null;
-    }
-};
+// /**
+//  * Get refreshed token and verify it
+//  * @param refreshToken
+//  * @return Promise<SignedUser | null>
+//  */
+// export const getRefreshUser = async (refreshToken: string): Promise<SignedUser | null> => {
+//     if (refreshToken) {
+//         try {
+//             return <SignedUser>jwt.verify(refreshToken.replace('Bearer ', ''), appRefreshSecretKey);
+//         } catch (err) {
+//             return null;
+//         }
+//     } else {
+//         return null;
+//     }
+// };
 
 /**
  * Get current user from token

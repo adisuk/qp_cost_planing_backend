@@ -48,10 +48,10 @@ model Prefix {
     isDeleted      Boolean          @default(value: false)
     createdAt      DateTime         @default(now())
     updatedAt      DateTime         @updatedAt
-    createdBy      User             @relation("PrefixCreatedBy", fields: [createdById], references: [id], onDelete: NoAction, onUpdate: NoAction)
-    createdById    String
-    updatedBy      User             @relation("PrefixUpdatedBy", fields: [updatedById], references: [id], onDelete: NoAction, onUpdate: NoAction)
-    updatedById    String
+    createdBy      User?             @relation("PrefixCreatedBy", fields: [createdById], references: [id], onDelete: NoAction, onUpdate: NoAction)
+    createdById    String?
+    updatedBy      User?             @relation("PrefixUpdatedBy", fields: [updatedById], references: [id], onDelete: NoAction, onUpdate: NoAction)
+    updatedById    String?
     users          User[]           @relation("UserPrefix")
 }
 
@@ -74,6 +74,7 @@ model LoginLog {
     loginDate  DateTime    @default(now())
     expireDate DateTime?
     token      String?
+    message    String?
     type       String   @default(value: "SignIn") //LoginType
     account    User?       @relation("LoginLogAccount", fields: [accountId], references: [id], onDelete: NoAction, onUpdate: NoAction)
     accountId  String?
@@ -104,10 +105,10 @@ model Menu {
     isDeleted Boolean   @default(value: false)
     createdAt   DateTime     @default(now())
     updatedAt   DateTime     @updatedAt
-    createdBy      User             @relation("MenuCreatedBy", fields: [createdById], references: [id], onDelete: NoAction, onUpdate: NoAction)
-    createdById    String
-    updatedBy      User             @relation("MenuUpdatedBy", fields: [updatedById], references: [id], onDelete: NoAction, onUpdate: NoAction)
-    updatedById    String
+    createdBy      User?             @relation("MenuCreatedBy", fields: [createdById], references: [id], onDelete: NoAction, onUpdate: NoAction)
+    createdById    String?
+    updatedBy      User?             @relation("MenuUpdatedBy", fields: [updatedById], references: [id], onDelete: NoAction, onUpdate: NoAction)
+    updatedById    String?
     subMenus  SubMenu[] @relation("MenuSubMenu")
 }
 
@@ -124,10 +125,10 @@ model SubMenu {
     isDeleted   Boolean      @default(value: false)
     createdAt   DateTime     @default(now())
     updatedAt   DateTime     @updatedAt
-    createdBy      User             @relation("SubMenuCreatedBy", fields: [createdById], references: [id], onDelete: NoAction, onUpdate: NoAction)
-    createdById    String
-    updatedBy      User             @relation("SubMenuUpdatedBy", fields: [updatedById], references: [id], onDelete: NoAction, onUpdate: NoAction)
-    updatedById    String
+    createdBy      User?             @relation("SubMenuCreatedBy", fields: [createdById], references: [id], onDelete: NoAction, onUpdate: NoAction)
+    createdById    String?
+    updatedBy      User?             @relation("SubMenuUpdatedBy", fields: [updatedById], references: [id], onDelete: NoAction, onUpdate: NoAction)
+    updatedById    String?
     unitMenus   UnitMenu[]   @relation("SubMenuUnitMenu")
 }
 
@@ -144,10 +145,10 @@ model UnitMenu {
     isDeleted   Boolean      @default(value: false)
     createdAt   DateTime     @default(now())
     updatedAt   DateTime     @updatedAt
-    createdBy      User             @relation("UnitMenuCreatedBy", fields: [createdById], references: [id], onDelete: NoAction, onUpdate: NoAction)
-    createdById    String
-    updatedBy      User             @relation("UnitMenuUpdatedBy", fields: [updatedById], references: [id], onDelete: NoAction, onUpdate: NoAction)
-    updatedById    String
+    createdBy      User?             @relation("UnitMenuCreatedBy", fields: [createdById], references: [id], onDelete: NoAction, onUpdate: NoAction)
+    createdById    String?
+    updatedBy      User?             @relation("UnitMenuUpdatedBy", fields: [updatedById], references: [id], onDelete: NoAction, onUpdate: NoAction)
+    updatedById    String?
     permissions Permission[] @relation("UnitMenuPermission")
 }
 
@@ -181,10 +182,10 @@ model Permission {
     isDeleted   Boolean  @default(value: false)
     createdAt   DateTime @default(now())
     updatedAt   DateTime @updatedAt
-    createdBy      User             @relation("PermissionCreatedBy", fields: [createdById], references: [id], onDelete: NoAction, onUpdate: NoAction)
-    createdById    String
-    updatedBy      User             @relation("PermissionUpdatedBy", fields: [updatedById], references: [id], onDelete: NoAction, onUpdate: NoAction)
-    updatedById    String
+    createdBy      User?             @relation("PermissionCreatedBy", fields: [createdById], references: [id], onDelete: NoAction, onUpdate: NoAction)
+    createdById    String?
+    updatedBy      User?             @relation("PermissionUpdatedBy", fields: [updatedById], references: [id], onDelete: NoAction, onUpdate: NoAction)
+    updatedById    String?
 }
 
 // ============== module User ==============
@@ -245,8 +246,8 @@ model UserResetLog{
     isDeleted            Boolean          @default(value: false)
     createdAt            DateTime         @default(now())
     updatedAt            DateTime         @updatedAt
-    createdBy      User             @relation("UserResetLogCreatedBy", fields: [createdById], references: [id], onDelete: NoAction, onUpdate: NoAction)
-    createdById    String
-    updatedBy      User             @relation("UserResetLogUpdatedBy", fields: [updatedById], references: [id], onDelete: NoAction, onUpdate: NoAction)
-    updatedById    String
+    createdBy      User?             @relation("UserResetLogCreatedBy", fields: [createdById], references: [id], onDelete: NoAction, onUpdate: NoAction)
+    createdById    String?
+    updatedBy      User?             @relation("UserResetLogUpdatedBy", fields: [updatedById], references: [id], onDelete: NoAction, onUpdate: NoAction)
+    updatedById    String?
 }

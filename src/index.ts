@@ -7,9 +7,22 @@ import {typeDefs} from './schemas';
 import {getResolvers} from './resolvers';
 import {ApolloContext} from "./common/context.interface";
 import {getCurrentUser} from "./services/jwt.service";
-import {appHostName, appPort} from "./common/config";
+import {appHostName, appPort, appDatabaseUrl, appDatabaseLogUrl} from "./common/config";
 
-const prisma = new PrismaClient();
+const prisma = new PrismaClient({
+    datasources: {
+        db: {
+            url: appDatabaseUrl,
+        },
+    },
+})
+const prismaLog = new PrismaClient({
+    datasources: {
+        db: {
+            url: appDatabaseLogUrl,
+        },
+    },
+})
 
 /**
  * Start the Apollo Server
@@ -32,6 +45,7 @@ async function startApolloServer() {
             const apolloContext: ApolloContext = {
                 request,
                 prisma,
+                prismaLog,
                 currentUser,
             };
 

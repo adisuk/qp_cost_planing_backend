@@ -1,161 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7b700c73-b0ec-44f5-836a-c7c1ceb319f1" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/.eslintignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.eslintrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prisma/migrations/20220524095540_init/migration.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prisma/migrations/migration_lock.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/authen.interface.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/context.interface.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/error.handler.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/pagination.interface.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resolvers/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resolvers/mutation/auth/auth.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resolvers/mutation/master/prefix.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resolvers/mutation/user/user.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resolvers/query/master/prefix.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resolvers/query/system/menu.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resolvers/query/system/role.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resolvers/query/user/user.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resolvers/relation/system/menu.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resolvers/relation/system/role.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resolvers/relation/user/user.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resolvers/shared/mutation.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resolvers/subscription/Subscription.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schemas/auth/auth.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schemas/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schemas/master/prefix.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schemas/pagination/pagination.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schemas/system/enum.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schemas/system/menu.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schemas/system/role.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schemas/user/user.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/seed/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/seed/master/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/seed/resetMenus.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/jwt.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/mutation.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/pagination.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/query.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/util.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+    <list default="true" id="315edf37-f0f3-4ab6-af2d-5581882764ee" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/prisma/migrations/20220524111638_edit/migration.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/migrations/20220524095540_init/migration.sql" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/migrations/20220524105310_edit/migration.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/context.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/context.interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/mutation/auth/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/mutation/auth/auth.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schemas/auth/auth.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schemas/auth/auth.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/seed/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/seed/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/seed/master/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/seed/master/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/seed/resetMenus.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/seed/resetMenus.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/jwt.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/jwt.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/util.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/util.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="TypeScript File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="main" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="29HNSxYw0cwll4IqsqSqVpd1SKq" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
+  <component name="ProjectId" id="29bxumeZafKS6lS7diA0HKah8nB" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/adisukpriwan/webstorm/qp_cost_planing_backend/prisma",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "/Users/adisukpriwan/webstorm/qp_cost_planing_backend/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;js.last.introduce.type&quot;: &quot;CONST&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/adisukpriwan/webstorm/qp_cost_planing_backend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/adisukpriwan/webstorm/qp_cost_planing_backend/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/prisma" />
-      <recent name="$PROJECT_DIR$/src/resolvers/relation/system" />
-      <recent name="$PROJECT_DIR$/src/resolvers/query/master" />
-      <recent name="$PROJECT_DIR$/src/schemas/master" />
-      <recent name="$PROJECT_DIR$/src/schemas/system" />
-    </key>
-  </component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="7b700c73-b0ec-44f5-836a-c7c1ceb319f1" name="Changes" comment="" />
-      <created>1652766055489</created>
+      <changelist id="315edf37-f0f3-4ab6-af2d-5581882764ee" name="Changes" comment="" />
+      <created>1653395811252</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1652766055489</updated>
-      <workItem from="1652766057909" duration="6825000" />
-      <workItem from="1652773070326" duration="59000" />
-      <workItem from="1652773206309" duration="15468000" />
-      <workItem from="1652846026665" duration="2902000" />
-      <workItem from="1652854547716" duration="41000" />
-      <workItem from="1652932008522" duration="1373000" />
-      <workItem from="1653026138447" duration="1984000" />
-      <workItem from="1653029348019" duration="6302000" />
-      <workItem from="1653208202912" duration="27547000" />
-      <workItem from="1653275048506" duration="9799000" />
-      <workItem from="1653305991947" duration="2860000" />
-      <workItem from="1653361617829" duration="20840000" />
+      <updated>1653395811252</updated>
+      <workItem from="1653395813108" duration="3970000" />
+      <workItem from="1653454614365" duration="6028000" />
     </task>
-    <task id="LOCAL-00001" summary="init">
-      <created>1653228950264</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1653228950264</updated>
-    </task>
-    <task id="LOCAL-00002" summary="init">
-      <created>1653248689699</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1653248689699</updated>
-    </task>
-    <task id="LOCAL-00003" summary="init">
-      <created>1653302001457</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1653302001460</updated>
-    </task>
-    <task id="LOCAL-00004" summary="convert DB to sqlserver">
-      <created>1653386197964</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1653386197964</updated>
-    </task>
-    <task id="LOCAL-00005" summary="-">
-      <created>1653386508439</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1653386508439</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,12 +79,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="convert DB to sqlserver" />
-    <MESSAGE value="-" />
-    <MESSAGE value="init" />
-    <option name="LAST_COMMIT_MESSAGE" value="init" />
   </component>
 </project>

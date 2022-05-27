@@ -5,5 +5,6 @@ import {SignedUser} from "./authen.interface";
 export interface ApolloContext {
     request: ExpressContext;
     prisma: PrismaClient;
+    prismaLog: PrismaClient;
     currentUser: SignedUser | null;
 }

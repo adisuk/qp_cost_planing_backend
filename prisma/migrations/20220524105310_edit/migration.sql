@@ -15,8 +15,8 @@ CREATE TABLE [qp$dev].[Prefix] (
     [isDeleted] BIT NOT NULL CONSTRAINT [Prefix_isDeleted_df] DEFAULT 0,
     [createdAt] DATETIME2 NOT NULL CONSTRAINT [Prefix_createdAt_df] DEFAULT CURRENT_TIMESTAMP,
     [updatedAt] DATETIME2 NOT NULL,
-    [createdById] NVARCHAR(1000) NOT NULL,
-    [updatedById] NVARCHAR(1000) NOT NULL,
+    [createdById] NVARCHAR(1000),
+    [updatedById] NVARCHAR(1000),
     CONSTRAINT [Prefix_pkey] PRIMARY KEY CLUSTERED ([id])
 );
 
@@ -72,8 +72,8 @@ CREATE TABLE [qp$dev].[Menu] (
     [isDeleted] BIT NOT NULL CONSTRAINT [Menu_isDeleted_df] DEFAULT 0,
     [createdAt] DATETIME2 NOT NULL CONSTRAINT [Menu_createdAt_df] DEFAULT CURRENT_TIMESTAMP,
     [updatedAt] DATETIME2 NOT NULL,
-    [createdById] NVARCHAR(1000) NOT NULL,
-    [updatedById] NVARCHAR(1000) NOT NULL,
+    [createdById] NVARCHAR(1000),
+    [updatedById] NVARCHAR(1000),
     CONSTRAINT [Menu_pkey] PRIMARY KEY CLUSTERED ([id]),
     CONSTRAINT [Menu_code_key] UNIQUE NONCLUSTERED ([code])
 );
@@ -91,8 +91,8 @@ CREATE TABLE [qp$dev].[SubMenu] (
     [isDeleted] BIT NOT NULL CONSTRAINT [SubMenu_isDeleted_df] DEFAULT 0,
     [createdAt] DATETIME2 NOT NULL CONSTRAINT [SubMenu_createdAt_df] DEFAULT CURRENT_TIMESTAMP,
     [updatedAt] DATETIME2 NOT NULL,
-    [createdById] NVARCHAR(1000) NOT NULL,
-    [updatedById] NVARCHAR(1000) NOT NULL,
+    [createdById] NVARCHAR(1000),
+    [updatedById] NVARCHAR(1000),
     CONSTRAINT [SubMenu_pkey] PRIMARY KEY CLUSTERED ([id]),
     CONSTRAINT [SubMenu_code_key] UNIQUE NONCLUSTERED ([code])
 );
@@ -110,8 +110,8 @@ CREATE TABLE [qp$dev].[UnitMenu] (
     [isDeleted] BIT NOT NULL CONSTRAINT [UnitMenu_isDeleted_df] DEFAULT 0,
     [createdAt] DATETIME2 NOT NULL CONSTRAINT [UnitMenu_createdAt_df] DEFAULT CURRENT_TIMESTAMP,
     [updatedAt] DATETIME2 NOT NULL,
-    [createdById] NVARCHAR(1000) NOT NULL,
-    [updatedById] NVARCHAR(1000) NOT NULL,
+    [createdById] NVARCHAR(1000),
+    [updatedById] NVARCHAR(1000),
     CONSTRAINT [UnitMenu_pkey] PRIMARY KEY CLUSTERED ([id]),
     CONSTRAINT [UnitMenu_code_key] UNIQUE NONCLUSTERED ([code])
 );
@@ -143,8 +143,8 @@ CREATE TABLE [qp$dev].[Permission] (
     [isDeleted] BIT NOT NULL CONSTRAINT [Permission_isDeleted_df] DEFAULT 0,
     [createdAt] DATETIME2 NOT NULL CONSTRAINT [Permission_createdAt_df] DEFAULT CURRENT_TIMESTAMP,
     [updatedAt] DATETIME2 NOT NULL,
-    [createdById] NVARCHAR(1000) NOT NULL,
-    [updatedById] NVARCHAR(1000) NOT NULL,
+    [createdById] NVARCHAR(1000),
+    [updatedById] NVARCHAR(1000),
     CONSTRAINT [Permission_pkey] PRIMARY KEY CLUSTERED ([id])
 );
 
@@ -185,8 +185,8 @@ CREATE TABLE [qp$dev].[UserResetLog] (
     [isDeleted] BIT NOT NULL CONSTRAINT [UserResetLog_isDeleted_df] DEFAULT 0,
     [createdAt] DATETIME2 NOT NULL CONSTRAINT [UserResetLog_createdAt_df] DEFAULT CURRENT_TIMESTAMP,
     [updatedAt] DATETIME2 NOT NULL,
-    [createdById] NVARCHAR(1000) NOT NULL,
-    [updatedById] NVARCHAR(1000) NOT NULL,
+    [createdById] NVARCHAR(1000),
+    [updatedById] NVARCHAR(1000),
     CONSTRAINT [UserResetLog_pkey] PRIMARY KEY CLUSTERED ([id])
 );
 

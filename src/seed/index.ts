@@ -1,10 +1,8 @@
-// @ts-ignore
-const prismaClient = require('@prisma/client');
+import { PrismaClient } from '@prisma/client'
 
-// @ts-ignore
-const prisma = new prismaClient.PrismaClient()
+const prisma = new PrismaClient()
 
-// @ts-ignore
+// A `main` function so that you can use async/await
 async function main() {
     //region clear data
     await prisma.permission.deleteMany({});
@@ -31,7 +29,7 @@ async function main() {
             username: 'root@qualityplus.co.th',
             isRoot: true,
             email: 'root@qualityplus.co.th',
-            password: '$2a$10$WKL7OLp3J1J5SPw8daNaKeLqiJ9Ez/WsxcInDxJcfv8BAvSoTdG92', // "Secret42"
+            password: "$2a$10$WKL7OLp3J1J5SPw8daNaKeLqiJ9Ez/WsxcInDxJcfv8BAvSoTdG92", // "Secret42"
             status: 'Enabled',
         },
     });
@@ -62,13 +60,13 @@ async function main() {
     //endregion
 
     //region update prefix
-    const prefix = await prisma.prefix.findFirst({})
+    const prefix = await prisma.prefix.findFirst({});
     await prisma.user.update({
         where: {
             id: currentUser.id
         },
         data: {
-            prefix: { connect: {id: prefix.id} }
+            prefix: { connect: {id: prefix!.id} }
         }
     })
     console.log('update... prefix to user root');
@@ -78,7 +76,9 @@ async function main() {
 }
 
 main()
-    .catch((e) => console.error(e))
+    .catch((e) => {
+        throw e
+    })
     .finally(async () => {
-        await prisma.$disconnect();
-    });
+        await prisma.$disconnect()
+    })

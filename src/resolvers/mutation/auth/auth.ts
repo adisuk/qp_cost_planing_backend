@@ -30,6 +30,7 @@ export const mutationAuth = {
                     payload: JSON.stringify(input),
                 },
             };
+            await loginLog(context, "", "", message);
             throw await throwError(context, {message, errorCode, additionalProperties});
         }
 
@@ -46,10 +47,11 @@ export const mutationAuth = {
                     payload: JSON.stringify(input),
                 },
             };
+            await loginLog(context, user.id, "", message);
             throw await throwError(context, {message, errorCode, additionalProperties});
         }
         const signInResponse = await createAuthResponse(user);
-        await loginLog(context, user, signInResponse.token);
+        await loginLog(context, user.id, signInResponse.token, "");
         return signInResponse;
     },
     async signOut() {
