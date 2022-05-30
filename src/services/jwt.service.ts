@@ -1,14 +1,14 @@
 import * as bcrypt from 'bcryptjs';
 import * as jwt from 'jsonwebtoken';
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const  { ApolloError } = require('apollo-server-express');
-import { User } from "@prisma/client";
+const {ApolloError} = require('apollo-server-express');
+import {User} from "../../prisma/generated/client";
 import {
-    // appPassphrase,
-    appRefreshSecretKey,
-    appRefreshTokenExpire,
-    appSecretKey,
-    appTokenExpire
+  // appPassphrase,
+  appRefreshSecretKey,
+  appRefreshTokenExpire,
+  appSecretKey,
+  appTokenExpire
 } from '../common/config';
 import {ApolloContext} from "../common/context.interface";
 import {AuthenticationResponder, SignedUser} from "../common/authen.interface";
@@ -32,13 +32,13 @@ export const comparePassword = async (password1: string, password2: string): Pro
  * @return {Promise<string>}
  */
 export const createToken = async (user: User): Promise<string> => {
-    const signedUser: SignedUser = {
-        id: user.id,
-        email: user.email,
-    }
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    return jwt.sign(signedUser, appSecretKey, {expiresIn: appTokenExpire});
+  const signedUser: SignedUser = {
+    id: user.id,
+    email: user.email,
+  }
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  return jwt.sign(signedUser, appSecretKey, {expiresIn: appTokenExpire});
 }
 
 /**
@@ -47,15 +47,15 @@ export const createToken = async (user: User): Promise<string> => {
  * @return {Promise<string>}
  */
 export const createRefreshToken = async (user: User): Promise<string> => {
-    const signedUser: SignedUser = {
-        id: user.id,
-        email: user.email,
-        // role: user.role,
-    }
+  const signedUser: SignedUser = {
+    id: user.id,
+    email: user.email,
+    // role: user.role,
+  }
 
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    return jwt.sign(signedUser, appRefreshSecretKey, {expiresIn: appRefreshTokenExpire});
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  return jwt.sign(signedUser, appRefreshSecretKey, {expiresIn: appRefreshTokenExpire});
 }
 
 /**
@@ -68,14 +68,14 @@ export const createRefreshToken = async (user: User): Promise<string> => {
  * @return {Promise<void>}
  */
 export const updateFailedCount = async (context: ApolloContext, userId: string, accessFailedCount: number): Promise<void> => {
-    await context.prisma.user.update({
-        where: {
-            id: userId,
-        },
-        data: {
-            accessFailedCount: accessFailedCount,
-        },
-    });
+  await context.prisma.user.update({
+    where: {
+      id: userId,
+    },
+    data: {
+      accessFailedCount: accessFailedCount,
+    },
+  });
 }
 
 /**
@@ -84,13 +84,13 @@ export const updateFailedCount = async (context: ApolloContext, userId: string, 
  * @return {Promise<AuthenticationResponder>}
  */
 export const createAuthResponse = async (user: User): Promise<AuthenticationResponder> => {
-    // before return user it good idea for remove password from the user object.
-    // user.password = null;
-    return {
-        token: await createToken(user),
-        refreshToken: await createRefreshToken(user),
-        user,
-    };
+  // before return user it good idea for remove password from the user object.
+  // user.password = null;
+  return {
+    token: await createToken(user),
+    refreshToken: await createRefreshToken(user),
+    user,
+  };
 };
 
 // /**
@@ -116,15 +116,15 @@ export const createAuthResponse = async (user: User): Promise<AuthenticationResp
  * @return Promise<SignedUser | null>
  */
 export const getCurrentUser = async (token: string): Promise<SignedUser | null> => {
-    if (token) {
-        try {
-            return <SignedUser>jwt.verify(token.replace('Bearer ', ''), appSecretKey);
-        } catch (err) {
-            return null;
-        }
-    } else {
-        return null;
+  if (token) {
+    try {
+      return <SignedUser>jwt.verify(token.replace('Bearer ', ''), appSecretKey);
+    } catch (err) {
+      return null;
     }
+  } else {
+    return null;
+  }
 };
 
 /**
@@ -133,10 +133,10 @@ export const getCurrentUser = async (token: string): Promise<SignedUser | null> 
  * @return Promise<void>
  */
 export const checkAuthorization = async (context: ApolloContext): Promise<void> => {
-    if (!context.currentUser) {
-        const message = 'Your session has ended. Please sign in again.';
-        const errorCode = 'authentication_error';
-        const additionalProperties = { data: { logLevel: 'low', method: 'checkAuthorization', payload: '' } };
-        throw new ApolloError(message, errorCode, additionalProperties);
-    }
+  if (!context.currentUser) {
+    const message = 'Your session has ended. Please sign in again.';
+    const errorCode = 'authentication_error';
+    const additionalProperties = {data: {logLevel: 'low', method: 'checkAuthorization', payload: ''}};
+    throw new ApolloError(message, errorCode, additionalProperties);
+  }
 };

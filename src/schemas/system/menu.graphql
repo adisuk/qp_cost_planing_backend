@@ -1,56 +1,56 @@
 extend type Query {
-	menu(id: ID!): Menu!
-	menus: [Menu!]
-    subMenu(id: ID!): SubMenu!
-    subMenus: [SubMenu!]
-    unitMenu(id: ID!): UnitMenu!
-    unitMenus: [UnitMenu!]
+  menu(id: ID!): Menu!
+  menus: [Menu!]
+  subMenu(id: ID!): SubMenu!
+  subMenus: [SubMenu!]
+  unitMenu(id: ID!): UnitMenu!
+  unitMenus: [UnitMenu!]
 }
 
 type Menu {
-	id: ID!
-	code: String!
-	icon: String!
-	nameTh: String!
-	nameEn: String!
-	route: String!
-	sequence: Int!
-	subMenus: [SubMenu]
-	status: Status!
-	createdAt: String!
-	updatedAt: String!
-	createdBy: User
-	updatedBy: User
+  id: ID!
+  code: String!
+  icon: String!
+  nameTh: String!
+  nameEn: String!
+  route: String!
+  sequence: Int!
+  subMenus: [SubMenu]
+  status: Status!
+  createdAt: String!
+  updatedAt: String!
+  createdBy: User
+  updatedBy: User
 }
 
 type SubMenu {
-	id: ID!
-	code: String!
-	nameTh: String!
-	nameEn: String
-	route: String
-	sequence: Int
-	menu: Menu!
-	unitMenus: [UnitMenu]
-	status: Status!
-	createdAt: String!
-	updatedAt: String!
-	createdBy: User
-	updatedBy: User
+  id: ID!
+  code: String!
+  nameTh: String!
+  nameEn: String
+  route: String
+  sequence: Int
+  menu: Menu!
+  unitMenus: [UnitMenu]
+  status: Status!
+  createdAt: String!
+  updatedAt: String!
+  createdBy: User
+  updatedBy: User
 }
 
 type UnitMenu {
-	id: ID!
-	code: String!
-	nameTh: String
-	nameEn: String
-	route: String
-	sequence: Int
-	subMenu: SubMenu!
-	permissions: [Permission]
-	status: Status!
-	createdAt: String!
-	updatedAt: String!
-	createdBy: User
-	updatedBy: User
+  id: ID!
+  code: String!
+  nameTh: String
+  nameEn: String
+  route: String
+  sequence: Int
+  subMenu: SubMenu!
+  permissions: [Permission]
+  status: Status!
+  createdAt: String!
+  updatedAt: String!
+  createdBy: User
+  updatedBy: User
 }

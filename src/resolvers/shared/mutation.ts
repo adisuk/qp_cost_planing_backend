@@ -47,19 +47,19 @@ import {errorHandler} from "../../common/error.handler";
  * @return {Promise<*|*>} - Object data after inserted to database
  */
 export async function genericUpdate(context: any, tableName: string, where: any, input: any) {
-    try {
-        return await context.prisma[tableName].update({
-            where: {
-                ...where,
-            },
-            data: {
-                ...input,
-                updatedById: context.currentUser.id,
-            },
-        });
-    } catch (e) {
-        throw errorHandler(e, input)
-    }
+  try {
+    return await context.prisma[tableName].update({
+      where: {
+        ...where,
+      },
+      data: {
+        ...input,
+        updatedById: context.currentUser.id,
+      },
+    });
+  } catch (e) {
+    throw errorHandler(e, input)
+  }
 }
 
 /**
@@ -72,27 +72,27 @@ export async function genericUpdate(context: any, tableName: string, where: any,
  * @return {Promise<*|*>} - Object data after inserted to database
  */
 export async function genericDelete(context: any, tableName: string, id: string, status = 'deleted', realDelete = false) {
-    try {
-        if (realDelete) {
-            return await context.prisma[tableName].delete({
-                where: {
-                    id: id,
-                },
-            });
-        }
-
-        return await context.prisma[tableName].update({
-            where: {
-                id: id,
-            },
-            data: {
-                status: status,
-                updatedById: context.currentUser.id,
-            },
-        });
-    } catch (e) {
-        throw errorHandler(e, {id: id})
+  try {
+    if (realDelete) {
+      return await context.prisma[tableName].delete({
+        where: {
+          id: id,
+        },
+      });
     }
+
+    return await context.prisma[tableName].update({
+      where: {
+        id: id,
+      },
+      data: {
+        status: status,
+        updatedById: context.currentUser.id,
+      },
+    });
+  } catch (e) {
+    throw errorHandler(e, {id: id})
+  }
 }
 
 /**
@@ -104,25 +104,25 @@ export async function genericDelete(context: any, tableName: string, id: string,
  * @return {Promise<*|*>} - Object data after inserted to database
  */
 export async function genericDeleteMany(context: any, tableName: string, where: any, realDelete = false) {
-    try {
-        if (realDelete) {
-            return await context.prisma[tableName].deleteMany({
-                where: {
-                    ...where,
-                },
-            });
-        }
-
-        return await context.prisma[tableName].updateMany({
-            where: {
-                ...where,
-            },
-            data: {
-                status: 'deleted',
-                updatedById: context.currentUser.id,
-            },
-        });
-    } catch (e) {
-        throw errorHandler(e, where)
+  try {
+    if (realDelete) {
+      return await context.prisma[tableName].deleteMany({
+        where: {
+          ...where,
+        },
+      });
     }
+
+    return await context.prisma[tableName].updateMany({
+      where: {
+        ...where,
+      },
+      data: {
+        status: 'deleted',
+        updatedById: context.currentUser.id,
+      },
+    });
+  } catch (e) {
+    throw errorHandler(e, where)
+  }
 }

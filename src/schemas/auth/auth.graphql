@@ -1,44 +1,45 @@
 extend type Mutation {
-    signIn(input: SignInInput!): Authen!
-    signOut: Boolean!
+  signIn(input: SignInInput!): Authen!
+  signOut: Boolean!
 }
 
 type Authen {
-    "Authen token"
-    token: String!
-    "Refresh token"
-    refreshToken: String!
-    "Detail of user"
-    user: User!
+  "Authen token"
+  token: String!
+  "Refresh token"
+  refreshToken: String!
+  "Detail of user"
+  user: User!
 }
 
 "Input from client to register a new user"
 input RegisterInput {
-    "Name of user"
-    name: String!
-    "Surname of user"
-    surname: String!
-    "Email to register"
-    email: String!
-    "Password"
-    password: String!
+  "Name of user"
+  name: String!
+  "Surname of user"
+  surname: String!
+  "Email to register"
+  email: String!
+  "Password"
+  password: String!
 }
 
 "User sign in"
 input SignInInput {
-    username: String!
-    password: String!
+  username: String!
+  password: String!
 }
 
 "User sign in with facebook"
 input SignInWithFacebookInput {
-    facebookId: String!
-    name: String!
-    surname: String!
-    email: String!
+  facebookId: String!
+  name: String!
+  surname: String!
+  email: String!
 }
 
+"Reset password"
 input ResetPasswordInput {
-    resetPasswordCode: String!
-    newPassword: String!
+  resetPasswordCode: String!
+  newPassword: String!
 }

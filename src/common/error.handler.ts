@@ -4,14 +4,14 @@ import {ApolloError, AuthenticationError, ForbiddenError, UserInputError} from "
  * Standard of error code
  */
 export const errorCode = {
-    unknown: {
-        code: 'ERR_001',
-        message: 'Unknown Error'
-    },
-    internalServer: {
-        code: 'ERR_002',
-        message: 'Internal Server Error'
-    }
+  unknown: {
+    code: 'ERR_001',
+    message: 'Unknown Error'
+  },
+  internalServer: {
+    code: 'ERR_002',
+    message: 'Internal Server Error'
+  }
 }
 
 /**
@@ -22,23 +22,23 @@ export const errorCode = {
  * @param data
  */
 export const errorHandler = (error: unknown, data: Record<string, any> | undefined = undefined): any => {
-    if (error instanceof AuthenticationError ||
-        error instanceof UserInputError ||
-        error instanceof ForbiddenError ||
-        error instanceof ApolloError) {
-        return error;
-    }
+  if (error instanceof AuthenticationError ||
+    error instanceof UserInputError ||
+    error instanceof ForbiddenError ||
+    error instanceof ApolloError) {
+    return error;
+  }
 
-    let result = errorCode.unknown;
+  let result = errorCode.unknown;
 
-    if (error instanceof Error) {
-        result = errorCode.internalServer;
-        result.message += `: ${(<Error>error).message}`
-    } else if (typeof error === "string") {
-        result = errorCode.internalServer;
-        result.message += `: ${error}`
-    }
+  if (error instanceof Error) {
+    result = errorCode.internalServer;
+    result.message += `: ${(<Error>error).message}`
+  } else if (typeof error === "string") {
+    result = errorCode.internalServer;
+    result.message += `: ${error}`
+  }
 
-    console.log(result, error, data)
-    return new ApolloError(result.message, result.code, data);
+  console.log(result, error, data)
+  return new ApolloError(result.message, result.code, data);
 }

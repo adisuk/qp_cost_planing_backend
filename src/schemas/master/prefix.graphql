@@ -1,34 +1,34 @@
 extend type Query {
-	prefix(id: ID!): Prefix
-	prefixes: [Prefix]
+  prefix(id: ID!): Prefix
+  prefixes: [Prefix]
 }
 
 extend type Mutation {
-	createPrefix(payload: PrefixInput!): Prefix!
-	updatePrefix(id: ID!, payload: PrefixInput!): Prefix!
-	deletePrefix(id: ID!): Prefix!
+  createPrefix(payload: PrefixInput!): Prefix!
+  updatePrefix(id: ID!, payload: PrefixInput!): Prefix!
+  deletePrefix(id: ID!): Prefix!
 }
 
 input PrefixInput {
-	id: ID
-	nameTh: String
-	nameShortTh: String
-	nameEn: String
-	nameShortEn: String
-	status: Status
+  id: ID
+  nameTh: String
+  nameShortTh: String
+  nameEn: String
+  nameShortEn: String
+  status: Status
 }
 
 type Prefix {
-	id: ID!
-	sequence: Int!
-	isChoose: Boolean!
-	nameTh: String!
-	nameShortTh: String
-	nameEn: String
-	nameShortEn: String
-	status: Status!
-	createdAt: String!
-	updatedAt: String!
-	createdBy: User!
-	updatedBy: User!
+  id: ID!
+  sequence: Int!
+  isChoose: Boolean!
+  nameTh: String!
+  nameShortTh: String
+  nameEn: String
+  nameShortEn: String
+  status: Status!
+  createdAt: String!
+  updatedAt: String!
+  createdBy: User!
+  updatedBy: User!
 }

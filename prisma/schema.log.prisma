@@ -1,0 +1,66 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated/client_log"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_LOG_URL")
+}
+
+// ============== module System ==============
+model EventLog {
+    id        String   @id @default(cuid())
+    ipAddress String
+    logLevel  String
+    method    String
+    message   String
+    errorCode String
+//    account   User?    @relation("EventLogAccount", fields: [accountId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+    accountId String?
+    payload   String?
+    createdAt DateTime @default(now())
+}
+
+model LoginLog {
+    id         String      @id @default(cuid())
+    loginDate  DateTime    @default(now())
+    expireDate DateTime?
+    token      String?
+    message    String?
+    type       String   @default(value: "SignIn") //LoginType
+//    account    User?       @relation("LoginLogAccount", fields: [accountId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+    accountId  String?
+    status     String @default(value: "Passed") //LoginStatus
+    createdAt  DateTime    @default(now())
+}
+
+model TransactionLog {
+    id        String   @id @default(cuid())
+    action    String
+    method    String
+    type      String   @default(value: "Created") //TransactionType
+//    account   User?    @relation("TransactionLogAccount", fields: [accountId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+    accountId String?
+    payload   String?
+    createdAt DateTime @default(now())
+}
+
+model UserResetLog{
+    id                   String           @id @default(cuid())
+//    user                 User             @relation("UserResetLogUser", fields: [userId], references: [id])
+    userId               String
+    seq                  Int              @default(value: 0)
+    password             String           @default(value: "")
+    status               String           @default(value: "Enabled") //Status
+    isDeleted            Boolean          @default(value: false)
+    createdAt            DateTime         @default(now())
+    updatedAt            DateTime         @updatedAt
+//    createdBy      User?             @relation("UserResetLogCreatedBy", fields: [createdById], references: [id], onDelete: NoAction, onUpdate: NoAction)
+    createdById    String?
+//    updatedBy      User?             @relation("UserResetLogUpdatedBy", fields: [updatedById], references: [id], onDelete: NoAction, onUpdate: NoAction)
+    updatedById    String?
+}

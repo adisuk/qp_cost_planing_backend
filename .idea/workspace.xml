@@ -1,11 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="315edf37-f0f3-4ab6-af2d-5581882764ee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
+    <list default="true" id="315edf37-f0f3-4ab6-af2d-5581882764ee" name="Changes" comment="[Update] fix seed file">
+      <change afterPath="$PROJECT_DIR$/prisma/schema.log.prisma" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/log.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/authen.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/authen.interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/context.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/context.interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/error.handler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/error.handler.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/pagination.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/pagination.interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/mutation/auth/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/mutation/auth/auth.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/mutation/master/prefix.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/mutation/master/prefix.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/mutation/user/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/mutation/user/user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/query/master/prefix.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/query/master/prefix.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/query/system/menu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/query/system/menu.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/query/system/role.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/query/system/role.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/query/user/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/query/user/user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/relation/system/menu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/relation/system/menu.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/relation/system/role.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/relation/system/role.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/relation/user/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/relation/user/user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/shared/mutation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/shared/mutation.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/subscription/Subscription.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/subscription/Subscription.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schemas/auth/auth.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schemas/auth/auth.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schemas/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/schemas/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schemas/master/prefix.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schemas/master/prefix.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schemas/pagination/pagination.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schemas/pagination/pagination.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schemas/system/enum.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schemas/system/enum.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schemas/system/menu.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schemas/system/menu.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schemas/system/role.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schemas/system/role.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schemas/user/user.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schemas/user/user.graphql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/seed/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/seed/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/seed/master/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/seed/master/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/seed/resetMenus.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/seed/resetMenus.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/jwt.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/jwt.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/pagination.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/pagination.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/util.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/util.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +48,13 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -34,14 +75,19 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/prisma" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor.code.editing" />
     <property name="show.migrate.to.gradle.popup" value="false" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/prisma" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -68,8 +114,17 @@
       <updated>1653395811252</updated>
       <workItem from="1653395813108" duration="3970000" />
       <workItem from="1653454614365" duration="6028000" />
-      <workItem from="1653641967922" duration="1817000" />
+      <workItem from="1653641967922" duration="4422000" />
+      <workItem from="1653885699413" duration="3721000" />
     </task>
+    <task id="LOCAL-00001" summary="[Update] fix seed file">
+      <created>1653643801907</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1653643801907</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -85,5 +140,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="[Update] fix seed file" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Update] fix seed file" />
   </component>
 </project>
